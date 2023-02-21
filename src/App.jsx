@@ -6,7 +6,7 @@ import CategoryPage from './Pages/category/CategoryPage'
 
 
 function App() {
-  const [display, setDisplay] = useState('category')
+  const [display, setDisplay] = useState('comments')
   const [login, setLogin] = useState('')
   const [category, setCategory] = useState('')
 
@@ -32,12 +32,14 @@ function App() {
     <>
       <CategoryPage onCat={getCategory}/>
     </>
-  ) : (
+  ) : display === 'comments' ? (
     <>
-      <CommentsPage />
+      <CommentsPage changeDisplay={changeDisplay} />
     </>
   )
-
+    :
+    <>
+    </>
  
 }
 

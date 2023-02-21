@@ -6,17 +6,17 @@ import CategoryPage from './Pages/category/CategoryPage'
 
 
 function App() {
-  const [display, setDisplay] = useState('comments')
+  const [display, setDisplay] = useState('login')
   const [login, setLogin] = useState('')
-  const [category, setCategory] = useState('')
+  const [catId, setCatId] = useState('')
 
   const getLogin = useCallback((login) => {
     setLogin(login)
     setDisplay('category')
   })
 
-  const getCategory = useCallback((cat) => {
-    setCategory(cat)
+  const getCategory = useCallback((catId) => {
+    setCatId(catId)
     setDisplay('comments')
   })
 
@@ -32,14 +32,11 @@ function App() {
     <>
       <CategoryPage onCat={getCategory}/>
     </>
-  ) : display === 'comments' ? (
+  ): (
     <>
-      <CommentsPage changeDisplay={changeDisplay} />
+      <CommentsPage catId={catId} author={login} changeDisplay={changeDisplay} />
     </>
   )
-    :
-    <>
-    </>
  
 }
 

@@ -1,19 +1,14 @@
 import classes from './category.module.css'
 
-const comments = [{ msg: "loremIpsum hezaoheozaheolzae  ljzah eljza helza hela e", author: "Sylsins", date: new Date() },
-{ msg: "loremIpsum hezaoheozaheolzae  zr  riageraera uhruza gerav", author: "Ryan", date: new Date() },
-{ msg: "loremIpsum hezaoheozaheolzae  ge  age eiuhzae  uhza", author: "Nicolas", date: new Date() },
-{ msg: "loremIpsum ezr  rkez rkez rz  ", author: "Guillaume", date: new Date() }]
-
 const Category = ({category, onCat}) => {
 
   return (
-    <li className={classes.cat} onClick={() => onCat(category)}>
+    <li className={classes.cat} onClick={() => onCat(category.id)}>
         <div>
-            <p>{category}</p>
-            <p>{comments.length} commentaires</p>
+            <p>{category.name}</p>
+            <p>{category.count} commentaires</p>
         </div>
-        <p>Dernier commantaire à: {comments[comments.length-1].date.toLocaleTimeString()}</p>
+        <p>Dernier commentaire à: {new Date(category.lastUpdate).toLocaleTimeString()}</p>
     </li>
   )
 }

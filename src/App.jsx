@@ -34,7 +34,7 @@ function App() {
     </>
   ) : display === 'comments' ? (
     <>
-      <CommentsPage changeDisplay={changeDisplay} />
+      <CommentsPage changeDisplay={changeDisplay} author={login} category={category} />
     </>
   )
     :

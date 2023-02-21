@@ -9,6 +9,12 @@
     padding: 0.5rem;
 }
 
+.cat:hover,
+.cat:active{
+    cursor: pointer;
+    background-color: rgba(209, 209, 209, 0.611);
+}
+
 .cat div{
     display: flex;
     justify-content: space-between;

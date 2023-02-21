@@ -5,10 +5,10 @@ const comments = [{ msg: "loremIpsum hezaoheozaheolzae  ljzah eljza helza hela e
 { msg: "loremIpsum hezaoheozaheolzae  ge  age eiuhzae  uhza", author: "Nicolas", date: new Date() },
 { msg: "loremIpsum ezr  rkez rkez rz  ", author: "Guillaume", date: new Date() }]
 
-const Category = ({category}) => {
+const Category = ({category, onCat}) => {
 
   return (
-    <li className={classes.cat}>
+    <li className={classes.cat} onClick={() => onCat(category)}>
         <div>
             <p>{category}</p>
             <p>{comments.length} commentaires</p>

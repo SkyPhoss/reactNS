@@ -4,15 +4,20 @@ import './App.css'
 import CommentsPage from "./Pages/CommentsPage"
 import CategoryPage from './Pages/category/CategoryPage'
 
-const categories = ['test' ,'test1' , 'test2', 'test3']
 
 function App() {
   const [display, setDisplay] = useState('category')
   const [login, setLogin] = useState('')
+  const [category, setCategory] = useState('')
 
   const getLogin = useCallback((login) => {
     setLogin(login)
     setDisplay('category')
+  })
+
+  const getCategory = useCallback((cat) => {
+    setCategory(cat)
+    setDisplay('comments')
   })
 
   const changeDisplay = useCallback((newDisplay) => {
@@ -25,7 +30,7 @@ function App() {
     </>
   ) : display === 'category'? (
     <>
-      <CategoryPage categories={categories}/>
+      <CategoryPage onCat={getCategory}/>
     </>
   ) : (
     <>

@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react'
 import Login from './components/login/login'
 import './App.css'
+import CommentsPage from "./Pages/CommentsPage"
 
 function App() {
   const [display, setDisplay] = useState('login')

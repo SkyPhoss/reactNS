@@ -2,11 +2,14 @@ import Comments from "../components/comments/Comments"
 import "../assets/css/CommentsPage.css"
 import { useEffect, useState } from "react"
 
-const CommentsPage = ( {changeDisplay, category, author } ) => {
-    const [comments, setComments] = useState([{ msg: "loremIpsum hezaoheozaheolzae  ljzah eljza helza hela e", author: "Sylsins", date: new Date() },
+const CommentsPage = ( {changeDisplay, catId, author } ) => {
+    const [comments, setComments] = useState([])
+    const [message, setMessage] = useState("")
+
+    /* [{ msg: "loremIpsum hezaoheozaheolzae  ljzah eljza helza hela e", author: "Sylsins", date: new Date() },
     { msg: "loremIpsum hezaoheozaheolzae  zr  riageraera uhruza gerav", author: "Ryan", date: new Date() },
     { msg: "loremIpsum hezaoheozaheolzae  ge  age eiuhzae  uhza", author: "Nicolas", date: new Date() },
-    { msg: "loremIpsum ezr  rkez rkez rz  ", author: "Guillaume", date: new Date() }])
+    { msg: "loremIpsum ezr  rkez rkez rz  ", author: "Guillaume", date: new Date() }] */
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -15,21 +18,22 @@ const CommentsPage = ( {changeDisplay, category, author } ) => {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            method: POST,
+            method: "POST",
             body: JSON.stringify({author, content: e.target.comment.value })
         }
-        fetch('http://localhost:8080/api/subject/'+ category  +'/message', opt)
+        fetch('http://localhost:8080/api/subject/'+ catId  +'/message', opt)
+        setComments('')
     }
 
     const handleClick = (e) => {
         changeDisplay("category")
     }
 
-    useEffetc(() => {
-        fetch('http://localhost:8080/api/subject/'+ category +'/message')
+    useEffect(() => {
+        fetch('http://localhost:8080/api/subject/'+ catId +'/message')
         .then((response) => response.json())
-        .then(data => console.log(data))
-    },[])
+        .then(data => setComments(data))
+    },[comments])
 
     return (
         <div className="CommentsPage">
@@ -39,11 +43,11 @@ const CommentsPage = ( {changeDisplay, category, author } ) => {
                     <button onClick={handleClick}>Retour</button>
                 </div>
 
-                {comments.map((comment, i) => {
+                {comments ? comments.map((comment, i) => {
                     return <Comments comment={comment} />
-                })}
+                }) : ""}
 
-                <textarea name="comment" />
+                <textarea name="comment" value={message} onChange={(e) => setMessage(e.target.value)}/>
                 <button>Envoyer</button>
             </form>
         </div>

@@ -4,9 +4,9 @@ const Comments = ({ comment }) => {
     return (
         <>
             <div>
-                <p>{comment.msg}</p>
+                <p>{comment.content}</p>
                 <p>{comment.author}</p>
-                <p>{comment.date.toLocaleDateString()}</p>
+                <p>{new Date(comment.createAt*1000).toLocaleDateString()}</p>
             </div>
         </>
     )

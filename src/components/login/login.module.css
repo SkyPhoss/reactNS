@@ -1,0 +1,39 @@
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.login form{
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+}
+
+.login input{
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    height: 2vh;
+    border: 1px solid grey;
+}
+
+.err{
+    background-color: rgba(255, 173, 173, 0.588);
+    border: 1px solid rgb(255, 92, 92);
+}
+
+.login button{
+    border: 1px solid grey;
+    background-color: rgba(231, 228, 228, 0.354);
+    border-radius: 4px;
+    padding: 0.3rem;
+}
+
+.login button:active,
+.login button:hover{
+    cursor: pointer;
+    background-color: rgba(231, 228, 228, 0.636);
+}
+

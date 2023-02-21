@@ -1,0 +1,16 @@
+.cat{
+    width: 40vw;
+    height: 15vh;    
+    border: 1px solid rgba(0, 0, 0, 0.287);
+    margin-bottom: 2rem;
+    background-color: rgba(209, 209, 209, 0.456);
+    border-radius: 8px;
+    font-size: 1.87rem;
+    padding: 0.5rem;
+}
+
+.cat div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}

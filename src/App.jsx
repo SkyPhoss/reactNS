@@ -2,9 +2,12 @@ import { useCallback, useState } from 'react'
 import Login from './components/login/login'
 import './App.css'
 import CommentsPage from "./Pages/CommentsPage"
+import CategoryPage from './Pages/category/CategoryPage'
+
+const categories = ['test' ,'test1' , 'test2', 'test3']
 
 function App() {
-  const [display, setDisplay] = useState('login')
+  const [display, setDisplay] = useState('category')
   const [login, setLogin] = useState('')
 
   const getLogin = useCallback((login) => {
@@ -22,10 +25,11 @@ function App() {
     </>
   ) : display === 'category'? (
     <>
-      <p></p>
+      <CategoryPage categories={categories}/>
     </>
   ) : (
     <>
+      <CommentsPage />
     </>
   )
 

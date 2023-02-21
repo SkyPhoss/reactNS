@@ -11,6 +11,10 @@ function App() {
     setDisplay('category')
   })
 
+  const changeDisplay = useCallback((newDisplay) => {
+    setDisplay(newDisplay)
+  })
+
   return display === 'login'? (
     <>
       <Login onLogin={getLogin}/>

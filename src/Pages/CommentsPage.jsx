@@ -6,10 +6,6 @@ const CommentsPage = ( {changeDisplay, catId, author } ) => {
     const [comments, setComments] = useState([])
     const [message, setMessage] = useState("")
 
-    /* [{ msg: "loremIpsum hezaoheozaheolzae  ljzah eljza helza hela e", author: "Sylsins", date: new Date() },
-    { msg: "loremIpsum hezaoheozaheolzae  zr  riageraera uhruza gerav", author: "Ryan", date: new Date() },
-    { msg: "loremIpsum hezaoheozaheolzae  ge  age eiuhzae  uhza", author: "Nicolas", date: new Date() },
-    { msg: "loremIpsum ezr  rkez rkez rz  ", author: "Guillaume", date: new Date() }] */
 
     const handleSubmit = (e) => {
         e.preventDefault()

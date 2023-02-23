@@ -1,6 +1,6 @@
 .cat{
     width: 40vw;
-    height: 15vh;    
+    height: 18vh;    
     border: 1px solid rgba(0, 0, 0, 0.287);
     margin-bottom: 2rem;
     background-color: rgba(209, 209, 209, 0.456);
@@ -19,4 +19,9 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
+}
+
+img{
+    height: 10vh;
+    width: 5vw;
 }

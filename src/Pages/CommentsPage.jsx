@@ -23,6 +23,7 @@ const CommentsPage = ( {changeDisplay, catId, author } ) => {
         }
         fetch('http://localhost:8080/api/subject/'+ catId  +'/message', opt)
         setComments('')
+        setMessage('')
     }
 
     const handleClick = (e) => {
